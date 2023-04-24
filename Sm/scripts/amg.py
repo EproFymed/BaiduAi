@@ -7,7 +7,7 @@
 import cv2  # type: ignore
 
 import sys, os
-sys.path.append(os.getcwd())
+sys.path.append('/root/Baidu/Sm/scripts')
 #print(sys.path)
 from Sm.segment_anything import SamAutomaticMaskGenerator, sam_model_registry
 
@@ -28,7 +28,7 @@ parser.add_argument(
     "--input",
     type=str,
     required=False,
-    default = "../input",
+    default = "input",
     help="Path to either a single input image or folder of images.",
 )
 
@@ -36,7 +36,7 @@ parser.add_argument(
     "--output",
     type=str,
     required=False,
-    default = "../output",
+    default = "output",
     help=(
         "Path to the directory where masks will be output. Output will be either a folder "
         "of PNGs per image or a single json with COCO-style masks."
@@ -55,7 +55,7 @@ parser.add_argument(
     "--checkpoint",
     type=str,
     required=False,
-    default = "../../sam_vit_h_4b8939.pth",
+    default = "sam_vit_h_4b8939.pth",
     help="The path to the SAM checkpoint to use for mask generation.",
 )
 
